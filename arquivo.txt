@@ -1,0 +1,2 @@
+{'nome': 'mi', 'idade': '18', 'curso': 'info'}
+{'nome': 'jo', 'idade': '18', 'curso': 'info'}
