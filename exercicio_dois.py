@@ -1,2 +1,3 @@
-with open('arquivo.txt', 'w') as arquivo:
-    
+from exercicio_um import ler_arquivos
+
+ler_arquivos()

@@ -1,19 +1,33 @@
-with open ('arquivo.txt', 'w') as arquivo:
-    estudante = {}
-    continuar = 1
+def ler_dados ():
+   
+    nome = (input("Digite o nome do estudante: "))
+    idade = (input("Digite a idade do estudante: "))     
+    curso = (input("Digite o curso do estudante: "))
 
-    while continuar != 0:
-        nome_estudante = (input("Digite o nome do estudante: "))
-        idade_nome = (input("Digite a idade do estudante: "))     
-        curso_estudante = (input("Digite o curso do estudante: "))
+    dados_alunos = {
+        "nome":nome,
+        "idade":idade,
+        "curso":curso,
+    }
+    return dados_alunos
 
-        estudante['nome'] = nome_estudante
-        estudante['idade'] = idade_nome
-        estudante['curso'] = curso_estudante
+def criar_arquivo (dados_alunos):
+        with open ("alunos.txt", "w") as arquivo:
+             for chave, valor in dados_alunos.items():
+                  linha = f'{chave}:{valor}\n'
+                  arquivo.write(linha)
 
-        arquivo.write (f"{estudante}\n")
+def ler_arquivos():
+    with open ('alunos.txt', 'r') as arquivo:
+        for linha in arquivo:
+            print(linha)
 
-        continuar = int (input("Digite 1 para continuar:\n Digite 0 para parar: "))
+if __name__ == '__main__':
+        dados_alunos = ler_dados()
+        criar_arquivo(dados_alunos = dados_alunos)
+        ler_arquivos()
+
+        
         
             
 
